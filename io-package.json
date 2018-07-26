@@ -85,6 +85,111 @@
                 "read":  true,
                 "write": false
             }
+        },
+        {
+            "_id": "Receiver_Info",
+            "type": "state",
+            "common": {
+                "name":  "Reveiver Info XML",
+                "type":  "string",
+                "role":  "state",
+                "read":  true,
+                "write": true,
+                "def": ""
+            },
+            "native": {
+                "command": "Reciver_Info"
+            }
+        },
+        {
+            "_id": "net-usb-list-info-allitems",
+            "type": "state",
+            "common": {
+                "name":  "All Items XML",
+                "type":  "string",
+                "role":  "state",
+                "read":  true,
+                "write": true,
+                "def": ""
+            },
+            "native": {
+                "command": "net-usb-list-info-allitems"
+            }
+        },
+        {
+            "_id": "NET/USB_Anzahl_Items",
+            "type": "state",
+            "common": {
+                "name":  "Anzahl Items",
+                "type":  "string",
+                "role":  "state",
+                "read":  true,
+                "write": true,
+                "def": ""
+            },
+            "native": {
+                "command": "NET/USB_Anzahl_Items"
+            }
+        },
+        {
+            "_id": "NET/USB_Layer",
+            "type": "state",
+            "common": {
+                "name":  "Layer",
+                "type":  "string",
+                "role":  "state",
+                "read":  true,
+                "write": true,
+                "def": ""
+            },
+            "native": {
+                "command": "NET/USB_Layer"
+            }
+        },
+        {
+            "_id": "NET/USB_Sequenz",
+            "type": "state",
+            "common": {
+                "name":  "Sequenz",
+                "type":  "string",
+                "role":  "state",
+                "read":  true,
+                "write": true,
+                "def": ""
+            },
+            "native": {
+                "command": "NET/USB_Sequenz"
+            }
+        },
+        {
+            "_id": "Cover_Transfer",
+            "type": "state",
+            "common": {
+                "name":  "Cover",
+                "type":  "string",
+                "role":  "state",
+                "read":  true,
+                "write": true,
+                "def": ""
+            },
+            "native": {
+                "command": "Cover_Transfer"
+            }
+        },
+        {
+            "_id": "Receiver_ListInfo",
+            "type": "state",
+            "common": {
+                "name":  "Item-List",
+                "type":  "string",
+                "role":  "state",
+                "read":  true,
+                "write": true,
+                "def": ""
+            },
+            "native": {
+                "command": "Receiver_ListInfo"
+            }
         }
     ]
 }
