@@ -43,7 +43,7 @@ var adapter = utils.adapter({
                   }
 			  
 			  // Volume Zone1
-              if (id == adapter.namespace + '.' +'Volume_Zone1') {
+              if (id == adapter.namespace + '.' +'Zone1.Volume') {
               var new_val = parseInt(state.val);  //string to integer
                 if (new_val >= adapter.config.maxvolzone1)
                 {
@@ -58,7 +58,7 @@ var adapter = utils.adapter({
                   }
                   
               // Volume Zone2                    
-              if (id == adapter.namespace + '.' +'Volume_Zone2') {
+              if (id == adapter.namespace + '.' +'Zone2.Volume') {
               var new_val = parseInt(state.val);  //string to integer
                 if (new_val >= adapter.config.maxvolzone2)
                 {
@@ -73,7 +73,7 @@ var adapter = utils.adapter({
                   }
 
               // Audio_Mute_Zone1                    
-              if (id == adapter.namespace + '.' +'Audio_Mute_Zone1') {
+              if (id == adapter.namespace + '.' +'Zone1.Mute') {
                   new_val = state.val;
               adapter.log.debug('new_val: ' + new_val);
                   if (new_val == true) {
@@ -88,7 +88,7 @@ var adapter = utils.adapter({
                   }        
 
               // Audio_Mute_Zone2                    
-              if (id == adapter.namespace + '.' +'Audio_Mute_Zone2') {
+              if (id == adapter.namespace + '.' +'Zone2.Mute') {
                   new_val = state.val;
                   if (new_val == true) {
                       new_val = '01';
@@ -102,7 +102,7 @@ var adapter = utils.adapter({
                   }        
               
               // Input_Select_Zone1       SLI
-              if (id == adapter.namespace + '.' +'Input_Select_Zone1') {
+              if (id == adapter.namespace + '.' +'Zone1.InputSelect') {
                   new_val = state.val;
                   new_val = 'SLI' + new_val;
               adapter.log.debug('new_val: ' + new_val);
@@ -110,7 +110,7 @@ var adapter = utils.adapter({
                   }        
 
               // Input_Select_Zone2       SLZ
-              if (id == adapter.namespace + '.' +'Input_Select_Zone2') {
+              if (id == adapter.namespace + '.' +'Zone2.InputSelect') {
                   new_val = state.val;
                   new_val = 'SLZ' + new_val;
               adapter.log.debug('new_val: ' + new_val);
@@ -118,7 +118,7 @@ var adapter = utils.adapter({
                   }        
                           
               // Internet_Radio_Preset_Zone1   NPR                  
-              if (id == adapter.namespace + '.' +'Internet_Radio_Preset_Zone1') {
+              if (id == adapter.namespace + '.' +'Zone1.NetRadioPreset') {
               var new_val = parseInt(state.val);  //string to integer
               new_val = decimalToHex(state.val).toUpperCase();  //call function decimalToHex();
               new_val = 'NPR' + new_val;
@@ -127,7 +127,7 @@ var adapter = utils.adapter({
                   }
 
               // Internet_Radio_Preset_Zone2   NPZ
-              if (id == adapter.namespace + '.' +'Internet_Radio_Preset_Zone2') {
+              if (id == adapter.namespace + '.' +'Zone2.NetRadioPreset') {
               var new_val = parseInt(state.val);  //string to integer
               new_val = decimalToHex(state.val).toUpperCase();  //call function decimalToHex();
               new_val = 'NPZ' + new_val;
@@ -136,7 +136,7 @@ var adapter = utils.adapter({
                   }                          
               
               // Tuner_Preset_Zone1  PRS
-              if (id == adapter.namespace + '.' +'Tuner_Preset_Zone1') {
+              if (id == adapter.namespace + '.' +'Zone1.TunerPreset') {
               var new_val = parseInt(state.val);  //string to integer
               new_val = decimalToHex(state.val).toUpperCase();  //call function decimalToHex();
               new_val = 'PRS' + new_val;
@@ -145,7 +145,7 @@ var adapter = utils.adapter({
                   }                          
 
               // Tuner_Preset_Zone2  PRZ
-              if (id == adapter.namespace + '.' +'Tuner_Preset_Zone2') {
+              if (id == adapter.namespace + '.' +'Zone2.TunerPreset') {
               var new_val = parseInt(state.val);  //string to integer
               new_val = decimalToHex(state.val).toUpperCase();  //call function decimalToHex();
               new_val = 'PRZ' + new_val;
@@ -154,7 +154,7 @@ var adapter = utils.adapter({
                   }                          
 
               // Power_Zone1    PWR
-              if (id == adapter.namespace + '.' +'Power_Zone1') {
+              if (id == adapter.namespace + '.' +'Zone1.Power') {
                   new_val = state.val;
                   if (new_val == true) {
                       new_val = '01';
@@ -168,7 +168,7 @@ var adapter = utils.adapter({
                   }        
  
               // Power_Zone2    ZPW
-              if (id == adapter.namespace + '.' +'Power_Zone2') {
+              if (id == adapter.namespace + '.' +'Zone2.Power') {
                   new_val = state.val;
                   if (new_val == true) {
                       new_val = '01';
@@ -214,70 +214,8 @@ function decimalToHex(d, padding) {
     return hex;
 }
    
-
-function createObjects () {
-      // Datenpunkte anlegen
-      var role = 'state';
-      var value = '';
-      var datapoints = new Array(
-          'Power_Zone1',
-          'Power_Zone2',
-          'NET/USB_Artist_Name_Info',
-          'NET/USB_Title_Name',
-          'NET/USB_Time_Info',
-          'NET/USB_Time_Current',
-          'NET/USB_Time',
-          'NET/USB_Album_Name_Info',
-          'NET/USB_Track_Info',
-          'NET_Play_Status',
-          'NET_Repeat_Status',
-          'NET_Shuffle_Status',
-          'Volume_Zone1',
-          'Volume_Zone2',
-          'Tuning_Zone1',
-          'Tuning_Zone2',
-          'Internet_Radio_Preset_Zone1',
-          'Internet_Radio_Preset_Zone2',
-          'Input_Select_Zone1',
-          'Input_Select_Zone2',
-          'Audio_Mute_Zone1',
-          'Audio_Mute_Zone2',
-          'Tuner_Preset_Zone1',
-          'Tuner_Preset_Zone2',
-          'Listening_Mode',
-          'Audio_Information',
-          'Video_Information'
-          );
-      
-      for ( var i=0 ; i < datapoints.length ; i++ )  {
-          adapter.log.info('My array objects: ' + adapter.namespace + '.' + datapoints[i] + ', role = ' + role);        
-      
-	  // Create DP command if not exist       
-      adapter.log.info('Create new object: ' + adapter.namespace + '.' + datapoints[i] + ', role = ' + role);
-   
-        objects[adapter.namespace + '.' + datapoints[i]] = {
-            _id: adapter.namespace + '.' + datapoints[i],
-            common: {
-                name: datapoints[i],
-                role: role,
-                type: 'number'
-            },
-            native: {
-                command: datapoints[i]
-            },
-            type: 'state'
-        };
-
-        adapter.setObject(datapoints[i], objects[adapter.namespace + '.' + datapoints[i]], function (err, obj) {
-            adapter.setState(datapoints[i], {val: value, ack: true});
-        });
-   }
-};
-
 function main() {
-    // First create the objects
-     createObjects();
-     
+         
     // The adapters config (in the instance object everything under the attribute "native") is accessible via
     // adapter.config:
     eiscp.on("error", function (e) {
@@ -367,33 +305,113 @@ function main() {
     if (chunk == 'PWR')  {
       string = parseInt(string);                   //convert string to integer
     if (string == '1') {
-      adapter.setState (adapter.namespace + '.' + 'Power_Zone1', {val: true, ack: true});
+      adapter.setState (adapter.namespace + '.' + 'Zone1.Power', {val: true, ack: true});
                         }
     if (string == '0') {
-      adapter.setState (adapter.namespace + '.' + 'Power_Zone1', {val: false, ack: true});
+      adapter.setState (adapter.namespace + '.' + 'Zone1.Power', {val: false, ack: true});
                         }                                              
                     }
      //Onkyo_Power_Zone2
     if (chunk == 'ZPW')  {
       string = parseInt(string);                   //convert string to integer
     if (string == '1') {
-      adapter.setState (adapter.namespace + '.' + 'Power_Zone2', {val: true, ack: true});
+      adapter.setState (adapter.namespace + '.' + 'Zone2.Power', {val: true, ack: true});
                         }
     if (string == '0') {
-      adapter.setState (adapter.namespace + '.' + 'Power_Zone2', {val: false, ack: true});
+      adapter.setState (adapter.namespace + '.' + 'Zone2.Power', {val: false, ack: true});
                         } 
                     }
     //Audio information
       if (chunk == 'IFA')  {  
-      adapter.setState (adapter.namespace + '.' + 'Audio_Information', {val: string, ack: true});
+      adapter.setState (adapter.namespace + '.' + 'Device.AudioInformation', {val: string, ack: true});
                     }                    
     //Net Play Status
       if (chunk == 'NST')  {
-        var nst_play = string.substr(0,1);         //Play status    (S=Stop,P=Play,p=pause,F=FF,R=FR)
+        var nst_play = string.substr(0,1);         //Play status    (S=Stop,P=Play,p=pause,F,FF,R,FR)
         var nst_repeat = string.substr(1,1);       //Repeat status  (-=Off,R=All,F=Folder,1=Repeat 1)
         var nst_shuffle = string.substr(2,1);      //Shuffle status (-=Off,S=All,A=Album,F=Folder)
-        adapter.setState (adapter.namespace + '.' + 'NET_Play_Status', {val: nst_play, ack: true});
-        adapter.setState (adapter.namespace + '.' + 'NET_Repeat_Status', {val: nst_repeat, ack: true});
+		//NET_Play_Status
+		switch (nst_play) {
+			case 'S' :
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaStop', {val: true, ack: true});
+			default: 
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaStop', {val: false, ack: true});
+			break;
+			
+			case 'P' :
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaPlay', {val: true, ack: true});
+			default:
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaPlay', {val: false, ack: true});
+			break;
+			
+			case 'p' :
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaPause', {val: true, ack: true});
+			default:
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaPause', {val: false, ack: true});
+			break;
+			
+			case 'F' :
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaForward', {val: true, ack: true});
+			default:
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaForward', {val: false, ack: true});
+			break;
+			
+			case 'FF' :
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastForward', {val: true, ack: true});
+			default:
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastForward', {val: false, ack: true});
+			break;
+		
+			case 'R' :
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaReverse', {val: true, ack: true});
+			default:
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaReverse', {val: false, ack: true});
+			break;
+		
+			case 'FR' :
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastReverse', {val: true, ack: true});
+			default:
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastReverse', {val: false, ack: true});
+			break;
+		}	
+		
+		switch (nst_repeat) {
+			case '-' : 	
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaState', {val: 'Off', ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaRepeat', {val: false, ack: true});
+				break;
+			case 'R' :
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaState', {val: 'All', ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaRepeat', {val: true, ack: true});
+				break;
+			case 'F' :
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaState', {val: 'Folder', ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaRepeat', {val: true, ack: true});
+				break;
+			case '1' :
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaState', {val: 'Repeat 1', ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaRepeat', {val: true, ack: true});
+				break;
+			
+		switch (nst_shuffle) {
+			case '-' :
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaModeShuffleStatus', {val: 'Off', ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaModeShuffle', {val: '0', ack: true});
+				break;
+			case 'S' :
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaModeShuffleStatus', {val: 'All', ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaModeShuffle', {val: '1', ack: true});
+				break;
+			case 'A' :
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaModeShuffleStatus', {val: 'Album', ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaModeShuffle', {val: '1', ack: true});
+				break;
+			case 'F' :
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaModeShuffleStatus', {val: 'Folder', ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaModeShuffle', {val: '1', ack: true});
+				break;
+			}	
+        
         adapter.setState (adapter.namespace + '.' + 'NET_Shuffle_Status', {val: nst_shuffle, ack: true});
                           }
 
@@ -401,10 +419,10 @@ function main() {
       if (chunk == 'AMT')  {
         string = parseInt(string);                  //convert string to integer
           if (string == '1') {
-      adapter.setState (adapter.namespace + '.' + 'Audio_Mute_Zone1', {val: true, ack: true});
+      adapter.setState (adapter.namespace + '.' + 'Zone1.Mute', {val: true, ack: true});
                         }
           if (string == '0') {
-      adapter.setState (adapter.namespace + '.' + 'Audio_Mute_Zone1', {val: false, ack: true});
+      adapter.setState (adapter.namespace + '.' + 'Zone1.Mute', {val: false, ack: true});
                         }
                       }                              
  
@@ -412,54 +430,54 @@ function main() {
       if (chunk == 'ZMT')  {
         string = parseInt(string);                  //convert string to integer  
           if (string == '1') {
-      adapter.setState (adapter.namespace + '.' + 'Audio_Mute_Zone2', {val: true, ack: true});
+      adapter.setState (adapter.namespace + '.' + 'Zone2.Mute', {val: true, ack: true});
                         }
           if (string == '0') {
-      adapter.setState (adapter.namespace + '.' + 'Audio_Mute_Zone2', {val: false, ack: true});
+      adapter.setState (adapter.namespace + '.' + 'Zone2.Mute', {val: false, ack: true});
                         } 
                     }
 
   //Onkyo_Input_Select_Zone1  (hex)
       if (chunk == 'SLI')  {
         string = string.substr(0,2)        
-        adapter.setState (adapter.namespace + '.' + 'Input_Select_Zone1', {val: string, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Zone1.InputSelect', {val: string, ack: true});
                     }
   //Onkyo_Input_Select_Zone2  (hex)
       if (chunk == 'SLZ')  {
         string = string.substr(0,2)  
-        adapter.setState (adapter.namespace + '.' + 'Input_Select_Zone2', {val: string, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Zone2.InputSelect', {val: string, ack: true});
                     }
 
   //Onkyo_Internet_Radio_Preset_Zone1 
       if (chunk == 'NPR')  {
         string = parseInt(string, 16);              //convert hex to decimal
-        adapter.setState (adapter.namespace + '.' + 'Internet_Radio_Preset_Zone1', {val: string, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Zone1.NetRadioPreset', {val: string, ack: true});
                     }
   //Onkyo_Internet_Radio_Preset_Zone2
       if (chunk == 'NPZ')  {
         string = parseInt(string, 16);              //convert hex to decimal
-        adapter.setState (adapter.namespace + '.' + 'Internet_Radio_Preset_Zone2', {val: string, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Zone2.NetRadioPreset', {val: string, ack: true});
                     }
 
   //Listening_Mode
       if (chunk == 'LMD')  {
         string = string.substr(0,2)  
-        adapter.setState (adapter.namespace + '.' + 'Listening_Mode', {val: string, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Device.ListeningMode', {val: string, ack: true});
                     }                    
                         
   //Onkyo_NET/USB_Album_Name_Info
       if (chunk == 'NAL')  {
-        adapter.setState (adapter.namespace + '.' + 'NET/USB_Album_Name_Info', {val: string, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Device.MediaAlbumName', {val: string, ack: true});
                     }
 
   //Onkyo_NET/USB_Artist_Name_Info
       if (chunk == 'NAT')  {
-        adapter.setState (adapter.namespace + '.' + 'NET/USB_Artist_Name_Info', {val: string, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Device.MediaArtistNameInfo', {val: string, ack: true});
                     }
 
   //Onkyo_NET/USB_Time_Info
       if (chunk == 'NTM')  {
-        adapter.setState (adapter.namespace + '.' + 'NET/USB_Time_Info', {val: string, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Device.MediaTimeInfo', {val: string, ack: true});
         var time_current_1 = string.substr(0,2);         // Current time
         time_current_1 = parseInt(time_current_1) * 60 ;
         var time_current_2 = string.substr(3,2);         // Current time
@@ -470,56 +488,56 @@ function main() {
         var time_2 = string.substr(9,2);                 // time
         time_2 = parseInt(time_2);
         var time = time_1 + time_2 ;              
-        adapter.setState (adapter.namespace + '.' + 'NET/USB_Time_Current', {val: time_current, ack: true});
-        adapter.setState (adapter.namespace + '.' + 'NET/USB_Time', {val: time, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Device.MediaTimeCurrent', {val: time_current, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Device.MediaTime', {val: time, ack: true});
                     }
 
   //Onkyo_NET/USB_Title_Name
       if (chunk == 'NTI')  {
-        adapter.setState (adapter.namespace + '.' + 'NET/USB_Title_Name', {val: string, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'MediaTitelName', {val: string, ack: true});
                     }
 
   //Onkyo_NET/USB_Track_Info
       if (chunk == 'NTR')  {
-        adapter.setState (adapter.namespace + '.' + 'NET/USB_Track_Info', {val: string, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Device.MediaTrack', {val: string, ack: true});
                     }
 
   //Onkyo_Tuner_Preset_Zone1
       if (chunk == 'PRS')  {
         string = parseInt(string, 16);              //convert hex to decimal
-        adapter.setState (adapter.namespace + '.' + 'Tuner_Preset_Zone1', {val: string, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Zone1.TunerPreset', {val: string, ack: true});
                     }
   //Onkyo_Tuner_Preset_Zone2
       if (chunk == 'PRZ')  {
         string = parseInt(string, 16);              //convert hex to decimal
-        adapter.setState (adapter.namespace + '.' + 'Tuner_Preset_Zone2', {val: string, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Zone2.TunerPreset', {val: string, ack: true});
                     }
 
   //Onkyo_Tuning_Zone1
       if (chunk == 'TUN')  {
         string = parseInt(string) / 100;            //set dot for decimal
-        adapter.setState (adapter.namespace + '.' + 'Tuning_Zone1', {val: string, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Zone1.Tune', {val: string, ack: true});
                     }
   //Onkyo_Tuning_Zone2                    
       if (chunk == 'TUZ')  {
         string = parseInt(string) / 100;            //set dot for decimal
-        adapter.setState (adapter.namespace + '.' + 'Tuning_Zone2', {val: string, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Zone2.Tune', {val: string, ack: true});
                     }
 
   //Video_information
       if (chunk == 'IFV')  {
-        adapter.setState (adapter.namespace + '.' + 'Video_information', {val: string, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Device.VideoInformation', {val: string, ack: true});
                     }  
 
   //Onkyo_Volume_Zone1
       if (chunk == 'MVL')  {
         string = parseInt(string, 16);              //convert hex to decimal - backward: string = string.toString(16);
-        adapter.setState (adapter.namespace + '.' + 'Volume_Zone1', {val: string, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Zone1.Volume', {val: string, ack: true});
                     }
   //Onkyo_Volume_Zone2
       if (chunk == 'ZVL')  {
         string = parseInt(string, 16);              //convert hex to decimal
-        adapter.setState (adapter.namespace + '.' + 'Volume_Zone2', {val: string, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Zone2.Volume', {val: string, ack: true});
                     }                     
     });
 

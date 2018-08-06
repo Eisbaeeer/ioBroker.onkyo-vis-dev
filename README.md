@@ -15,27 +15,7 @@ For sending commands, there is a special state "RAW". Writes to that state
 trigger only RAW commands like the known EISCP Excel files
 As example of an EISCP RAW command in the form of "PWR01".
 
-## VIS compatibility
-The adapter will convert the given values in Onkyo readable values and sends it directly to the receiver and vice versa.
-In this way you can set the value of e.g. volume with a slider or input box. If you control your receiver via IR you will get this reply also on this object.
-As an second example, you can use a boolean switch button to control the power-button of the receiver.
-
-! Please do only use the Object "RAW" to send own commands. Please do not check the "Ack" flad, otherwise the command will not be working.
-
-|OBJECT WHO CAN USED IN VIS   |ISCP  |Input value         |Example  |Description                           |
-|-----------------------------|:----:|:------------------:|:-------:|-------------------------------------:|
-|Volume_Zone1                 |MVL   |1-99 decimal        |20       |"Master volume (Zone 1)"              |                
-|Volume_Zone2    	            |ZVL   |1-00 decimal        |22       |"Volume zone2 (Zone 2)"               |
-|Audio_Mute_Zone1             |AMT   |true/false or 00/01 |00       |"Mute Zone1"                          |
-|Audio_Mute_Zone2             |ZMT   |true/false or 00/01 |01       |"Mute Zone2"                          |
-|Input_Select_Zone1           |SLI   |00-FF hex           |2B       |"See excel list EISCP for hex values" |
-|Input_Select_Zone2           |SLZ   |00-FF hex           |2F       |"See excel list EISCP for hex values" |
-|Internet_Radio_Preset_Zone1  |NPR   |1-40 decimal        |12       |"Internet radio preset number Zone 1" |
-|Internet_Radio_Preset_Zone2  |NPZ   |1-40 decimal        |10       |"Internet radio preset number Zone 2" |
-|Tuner_Preset_Zone1           |PRS   |1-30 decimal        |08       |"Tuner preset number Zone 1"          |
-|Tuner_Preset_Zone2           |PRZ   |1-30 decimal        |11       |"Tuner preset number Zone 2"          |
-|Power_Zone1                  |PWR   |true/false or 00/01 |00 or 0  |"Power Zone 1"                        |
-|Power_Zone2                  |ZPW   |true/false or 00/01 |01 or 1  |"Power Zone 2"                        |
+## DEVELOPER VERSION
 
 Another special state maintained by the adapter is "connected". It's a boolean
 showing whether node-eiscp is currently connected to a receiver.
@@ -47,6 +27,9 @@ Example of VIS view
 * Adding new admin to adapter
 
 ## ChangeLog
+### 1.1.0
+* (Eisbaeeer) Completely new structure (Zone1, Zone2, Device)
+
 ### 1.0.5
 * (Eisbaeeer) Changed structure
 * (Eisbaeeer) Added Object RAW to send own commands
