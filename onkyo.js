@@ -344,46 +344,53 @@ function main() {
         var nst_shuffle = string.substr(2,1);      //Shuffle status (-=Off,S=All,A=Album,F=Folder)
 		//NET_Play_Status
 		switch (nst_play) {
-			case 'S' :
+			case 'S' : {
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaStop', {val: true, ack: true});
-			default: 
+			} else {
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaStop', {val: false, ack: true});
+			}
 			break;
 			
-			case 'P' :
+			case 'P' : {
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaPlay', {val: true, ack: true});
-			default:
+			} else {
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaPlay', {val: false, ack: true});
+			}
 			break;
 			
-			case 'p' :
+			case 'p' :{
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaPause', {val: true, ack: true});
-			default:
+			} else {
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaPause', {val: false, ack: true});
+			}
 			break;
 			
-			case 'F' :
+			case 'F' : {
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaForward', {val: true, ack: true});
-			default:
+			} else {
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaForward', {val: false, ack: true});
+			}
 			break;
 			
-			case 'FF' :
+			case 'FF' :{
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastForward', {val: true, ack: true});
-			default:
+			} else {
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastForward', {val: false, ack: true});
+			}
 			break;
 		
-			case 'R' :
+			case 'R' :{
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaReverse', {val: true, ack: true});
-			default:
+			} else {
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaReverse', {val: false, ack: true});
+			}
 			break;
 		
-			case 'FR' :
+			case 'FR' :{
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastReverse', {val: true, ack: true});
-			default:
+			} else {
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastReverse', {val: false, ack: true});
+			}
 			break;
 		}	
 		
