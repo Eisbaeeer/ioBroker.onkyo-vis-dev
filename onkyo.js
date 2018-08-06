@@ -549,10 +549,8 @@ function main() {
   //Onkyo_Volume_Zone2
       if (chunk == 'ZVL')  {
         string = parseInt(string, 16);              //convert hex to decimal
-<<<<<<< HEAD
         adapter.setState (adapter.namespace + '.' + 'Zone2.Volume', {val: string, ack: true});
                     }                     
-=======
         adapter.setState (adapter.namespace + '.' + 'Volume_Zone2', {val: string, ack: true});
                     }
 
@@ -625,7 +623,6 @@ function main() {
           adapter.setState (adapter.namespace + '.' + 'RAW', {val: 'NTCRETURN'}); 
                                               }
                           }
->>>>>>> origin/master
     });
 
     eiscp.on("debug", function (message) {
