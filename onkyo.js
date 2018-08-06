@@ -3,12 +3,19 @@
 "use strict";
 
 const eiscp = require('eiscp');
+const xml2js = require('xml2js');
+var parser = new xml2js.Parser({ explicitArray: true });
 
 // you have to require the adapter module and pass a options object
 const utils = require(__dirname + '/lib/utils'); // Get common adapter utils
 
 const objects = {};
 const volume = {};
+var xmlstring = '';
+var xjs = '';
+var sequenz = '';
+var imageb64 = '';
+
 
 //const adapter = utils.Adapter('onkyo-vis');    // name has to be set and has to be equal to adapters folder name and main file name excluding extension
 var adapter = utils.adapter({    
@@ -251,11 +258,11 @@ function main() {
         // Query some initial information
         
 		var datapoints = new Array(
-          'PWRQSTN',
-          'MVLQSTN',
+      'PWRQSTN',
+      'MVLQSTN',
 		  'ZVLQSTN',
 		  'IFAQSTN',
-          'SLIQSTN',
+      'SLIQSTN',
 		  'SLZQSTN',
 		  'ZMTQSTN',
 		  'AMTQSTN',
@@ -273,7 +280,7 @@ function main() {
 		  'TUNQSTN',
 		  'TUZQSTN',
 		  'IFVQSTN',
-          'SLAQSTN'
+      'SLAQSTN'
           );
 	
         
@@ -297,6 +304,11 @@ function main() {
   
         var chunk = cmd.iscp_command.substr(0,3);
         var string = 	cmd.iscp_command.substr(3,80);
+
+        // If a string don't comes clean from eiscp happens on NLAX....
+        if (string.includes("ISCP")) {
+         string = string.substring(0, (string.indexOf('ISCP')))
+                                    }        
  
         adapter.log.debug('chunk: ' + chunk);
         adapter.log.debug('string: ' + string);   
@@ -537,8 +549,83 @@ function main() {
   //Onkyo_Volume_Zone2
       if (chunk == 'ZVL')  {
         string = parseInt(string, 16);              //convert hex to decimal
+<<<<<<< HEAD
         adapter.setState (adapter.namespace + '.' + 'Zone2.Volume', {val: string, ack: true});
                     }                     
+=======
+        adapter.setState (adapter.namespace + '.' + 'Volume_Zone2', {val: string, ack: true});
+                    }
+
+  //Onkyo_AVR_INFO (xml)
+    if (chunk == 'NRI') {
+      adapter.setState (adapter.namespace + '.' + 'Receiver_Info', {val: (cmd.iscp_command).slice(3, -3), ack: true});
+                        }
+
+  //Onkyo_AVR_ListInfo (xml)
+    if (chunk == 'NLA') {
+      sequenz = string.substr(1,4)
+      adapter.setState (adapter.namespace + '.' + 'NET/USB_Sequenz', {val: sequenz, ack: true});
+      adapter.log.debug('sequenz: ' + sequenz);
+      var xmlrepeat = ((cmd.iscp_command).slice(12).substring(0, ((cmd.iscp_command).slice(12).indexOf('</response>'))+11))
+      parser.parseString(xmlrepeat, function (err, result) {
+        var jsonrepeat = JSON.stringify(result);
+        adapter.setState (adapter.namespace + '.' + 'Receiver_ListInfo', {val: jsonrepeat, ack: true});
+        adapter.log.debug('Adapter SET Reciver_ListInfo: ' + jsonrepeat);
+                                                          });
+      adapter.log.debug('Adapter SET Reciver_ListInfo: ' + ((cmd.iscp_command).slice(12).substring(0, ((cmd.iscp_command).slice(12).indexOf('</response>'))+11)));
+                        }
+
+  //Onkyo_Cover_Transfer (base64 coded in HEX)
+    if (chunk == 'NJA') {
+    var covertype = string.substr(0,1)
+    adapter.log.debug('Covertype: ' + covertype);
+      if (covertype == '0') {
+        var image_type = 'bmp';       
+                          }
+      if (covertype == '1') {
+        var image_type = 'jpg';
+                          }
+    
+    var packetflag = string.substr(1,1)
+    adapter.log.debug('packetflag: ' + packetflag);
+      if (packetflag == '0') {
+        var hextob64 = new Buffer(cmd.iscp_command.substr(5), 'hex').toString('base64')
+        imageb64 = hextob64;
+                            }
+      if (packetflag == '1') {
+        imageb64 = imageb64 + new Buffer(cmd.iscp_command.substr(5), 'hex').toString('base64');
+                            }
+      if (packetflag == '2') {
+        imageb64 = imageb64 + new Buffer(cmd.iscp_command.substr(5), 'hex').toString('base64');
+        var img = 'data:image/' + image_type + ';base64,' + imageb64;
+        adapter.setState (adapter.namespace + '.' + 'Cover_Transfer', {val: img, ack: true});       
+                            }
+        
+                        }
+
+    //Onkyo Navigation on "Network-Mode"
+      if (chunk == 'NLT')  {
+        var string_nlt = string.substr(22,40);
+        adapter.setState (adapter.namespace + '.' + 'NET/USB_NAVIGATION', {val: string_nlt, ack: true});
+        //String zerlegen fuer Navigation
+        var string_nlt_nav = string.substr(6,2);                    //2 digits navigation
+        string_nlt_nav = parseInt(string_nlt_nav, 16) + 1;              //this start at zero, we need start at one and convert hex to decimal
+        var string_nlt_nav_summ = string.substr(10,2);              //2 digits navigation summary
+        string_nlt_nav_summ = parseInt(string_nlt_nav_summ, 16);    //convert hex to decimal
+        adapter.setState (adapter.namespace + '.' + 'NET/USB_POSITION_SUMM', {val: string_nlt_nav+"/"+string_nlt_nav_summ, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'NET/USB_Anzahl_Items', {val: string.substr(8,4), ack: true});
+        adapter.setState (adapter.namespace + '.' + 'NET/USB_Layer', {val: string.substr(12,2), ack: true});
+        if (string.substr(0,3) == '110') {
+          if (!sequenz) {
+            sequenz = '0000'
+                      }
+          adapter.setState (adapter.namespace + '.' + 'RAW', {val: 'NLAL' + sequenz + string.substr(12,2) + '0000' + string.substr(8,4)});
+                                        }
+        else if (string.substr(0,3) == '112') {
+          adapter.setState (adapter.namespace + '.' + 'RAW', {val: 'NTCRETURN'}); 
+                                              }
+                          }
+>>>>>>> origin/master
     });
 
     eiscp.on("debug", function (message) {
