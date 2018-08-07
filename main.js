@@ -42,7 +42,7 @@ var adapter = utils.adapter({
           // Here we go and send command from accepted Objects to command var
  			  
 			  // SET RAW EISCP COMMAND
-              if (id == adapter.namespace + '.' +'RAW') {
+              if (id == adapter.namespace + '.' +'Device.RAW') {
                 new_val = state.val;
 				adapter.log.debug('Send RAW to Receiver: ' + new_val);
 				adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
