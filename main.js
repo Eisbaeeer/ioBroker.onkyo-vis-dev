@@ -277,7 +277,7 @@ var adapter = utils.adapter({
               if (id == adapter.namespace + '.' +'Device.MediaDown') {
                   new_val = state.val;
                   if (new_val == true) {
-                      new_val = 'Down';
+                      new_val = 'DOWN';
                       }
               new_val = 'NTC' + new_val;
               adapter.log.debug('new_val: ' + new_val);
