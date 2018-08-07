@@ -344,55 +344,83 @@ function main() {
         var nst_shuffle = string.substr(2,1);      //Shuffle status (-=Off,S=All,A=Album,F=Folder)
 		//NET_Play_Status
 		switch (nst_play) {
-			case 'S' : {
+			case 'S' : 
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaStop', {val: true, ack: true});
-			} else {
-				adapter.setState (adapter.namespace + '.' + 'Device.MediaStop', {val: false, ack: true});
-			}
-			break;
-			
-			case 'P' : {
-				adapter.setState (adapter.namespace + '.' + 'Device.MediaPlay', {val: true, ack: true});
-			} else {
+				// set other false
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaPlay', {val: false, ack: true});
-			}
-			break;
-			
-			case 'p' :{
-				adapter.setState (adapter.namespace + '.' + 'Device.MediaPause', {val: true, ack: true});
-			} else {
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaPause', {val: false, ack: true});
-			}
-			break;
-			
-			case 'F' : {
-				adapter.setState (adapter.namespace + '.' + 'Device.MediaForward', {val: true, ack: true});
-			} else {
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaForward', {val: false, ack: true});
-			}
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastForward', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaReverse', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastReverse', {val: false, ack: true});
 			break;
 			
-			case 'FF' :{
-				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastForward', {val: true, ack: true});
-			} else {
+			case 'P' : 
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaPlay', {val: true, ack: true});
+				// set other false
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaStop', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaPause', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaForward', {val: false, ack: true});
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastForward', {val: false, ack: true});
-			}
-			break;
-		
-			case 'R' :{
-				adapter.setState (adapter.namespace + '.' + 'Device.MediaReverse', {val: true, ack: true});
-			} else {
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaReverse', {val: false, ack: true});
-			}
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastReverse', {val: false, ack: true});
+			break;
+			
+			case 'p' : 
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaPause', {val: true, ack: true});
+				// set other false
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaStop', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaPlay', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaForward', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastForward', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaReverse', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastReverse', {val: false, ack: true});
+			break;
+			
+			case 'F' : 
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaForward', {val: true, ack: true});
+				// set other false
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaStop', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaPlay', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaPause', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastForward', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaReverse', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastReverse', {val: false, ack: true});
+			break;
+			
+			case 'FF' :
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastForward', {val: true, ack: true});
+				// set other false
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaStop', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaPlay', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaPause', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaForward', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaReverse', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastReverse', {val: false, ack: true});
 			break;
 		
-			case 'FR' :{
-				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastReverse', {val: true, ack: true});
-			} else {
+			case 'R' :
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaReverse', {val: true, ack: true});
+				// set other false
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaStop', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaPlay', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaPause', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaForward', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastForward', {val: false, ack: true});
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastReverse', {val: false, ack: true});
-			}
 			break;
-		}	
+		
+			case 'FR' :
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastReverse', {val: true, ack: true});
+				// set other false
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaStop', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaPlay', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaPause', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaForward', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaFastForward', {val: false, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.MediaReverse', {val: false, ack: true});
+			break;
+    }
 		
 		switch (nst_repeat) {
 			case '-' : 	
@@ -411,6 +439,7 @@ function main() {
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaState', {val: 'Repeat 1', ack: true});
 				adapter.setState (adapter.namespace + '.' + 'Device.MediaRepeat', {val: true, ack: true});
 				break;
+      }
 			
 		switch (nst_shuffle) {
 			case '-' :
@@ -433,6 +462,8 @@ function main() {
         
         adapter.setState (adapter.namespace + '.' + 'NET_Shuffle_Status', {val: nst_shuffle, ack: true});
                           }
+               
+
 
     //Onkyo_Audio_Mute_Zone1
       if (chunk == 'AMT')  {
@@ -557,18 +588,21 @@ function main() {
       if (chunk == 'ZVL')  {
         string = parseInt(string, 16);              //convert hex to decimal
         adapter.setState (adapter.namespace + '.' + 'Zone2.Volume', {val: string, ack: true});
-                    }                     
-        adapter.setState (adapter.namespace + '.' + 'Volume_Zone2', {val: string, ack: true});
                     }
+            });          
 
+
+
+ 
+/*
   //Onkyo_AVR_INFO (xml)
-    if (chunk == 'NRI') {
-      adapter.setState (adapter.namespace + '.' + 'Receiver_Info', {val: (cmd.iscp_command).slice(3, -3), ack: true});
-                        }
+   if (chunk == 'NRI') {
+     adapter.setState (adapter.namespace + '.' + 'Receiver_Info', {val: (cmd.iscp_command).slice(3, -3), ack: true});
+                       }
 
   //Onkyo_AVR_ListInfo (xml)
     if (chunk == 'NLA') {
-      sequenz = string.substr(1,4)
+    sequenz = string.substr(1,4)
       adapter.setState (adapter.namespace + '.' + 'NET/USB_Sequenz', {val: sequenz, ack: true});
       adapter.log.debug('sequenz: ' + sequenz);
       var xmlrepeat = ((cmd.iscp_command).slice(12).substring(0, ((cmd.iscp_command).slice(12).indexOf('</response>'))+11))
@@ -576,7 +610,7 @@ function main() {
         var jsonrepeat = JSON.stringify(result);
         adapter.setState (adapter.namespace + '.' + 'Receiver_ListInfo', {val: jsonrepeat, ack: true});
         adapter.log.debug('Adapter SET Reciver_ListInfo: ' + jsonrepeat);
-                                                          });
+                                                         });
       adapter.log.debug('Adapter SET Reciver_ListInfo: ' + ((cmd.iscp_command).slice(12).substring(0, ((cmd.iscp_command).slice(12).indexOf('</response>'))+11)));
                         }
 
@@ -629,8 +663,9 @@ function main() {
         else if (string.substr(0,3) == '112') {
           adapter.setState (adapter.namespace + '.' + 'RAW', {val: 'NTCRETURN'}); 
                                               }
-                          }
-    });
+                          
+                          }                          
+    });    */
 
     eiscp.on("debug", function (message) {
         adapter.log.debug(message);
