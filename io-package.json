@@ -81,7 +81,7 @@
                 "type":  "boolean",
                 "role":  "switch.power.zone",
                 "read":  true,
-                "write": false
+                "write": true
             }
         },
 		{
@@ -92,7 +92,7 @@
                 "type":  "string",
                 "role":  "level.volume",
                 "read":  true,
-                "write": false
+                "write": true
             }
         },
 		{
@@ -103,51 +103,51 @@
                 "type":  "string",
                 "role":  "state",
                 "read":  true,
-                "write": false
+                "write": true
             }
         },
 		{
             "_id": "Zone1.NetRadioPreset",
             "type": "state",
             "common": {
-                "name":  "NetRadioPreset",
+                "name":  "Net Radio Preset",
                 "type":  "string",
                 "role":  "state",
                 "read":  true,
-                "write": false
+                "write": true
             }
         },
 		{
             "_id": "Zone1.InputSelect",
             "type": "state",
             "common": {
-                "name":  "InputSelect",
+                "name":  "Input Select",
                 "type":  "string",
                 "role":  "media.input",
                 "read":  true,
-                "write": false
+                "write": true
             }
         },
 		{
             "_id": "Zone1.Mute",
             "type": "state",
             "common": {
-                "name":  "InputMute",
+                "name":  "Input Mute",
                 "type":  "string",
                 "role":  "media.mute",
                 "read":  true,
-                "write": false
+                "write": true
             }
         },
 		{
             "_id": "Zone1.TunerPreset",
             "type": "state",
             "common": {
-                "name":  "TunerPreset",
+                "name":  "Tuner Preset",
                 "type":  "string",
                 "role":  "state",
                 "read":  true,
-                "write": false
+                "write": true
             }
         },
 		
@@ -174,7 +174,7 @@
                 "type":  "boolean",
                 "role":  "switch.power.zone",
                 "read":  true,
-                "write": false
+                "write": true
             }
         },
 		{
@@ -185,7 +185,7 @@
                 "type":  "string",
                 "role":  "level.volume",
                 "read":  true,
-                "write": false
+                "write": true
             }
         },
 		{
@@ -196,51 +196,51 @@
                 "type":  "string",
                 "role":  "state",
                 "read":  true,
-                "write": false
+                "write": true
             }
         },
 		{
             "_id": "Zone2.NetRadioPreset",
             "type": "state",
             "common": {
-                "name":  "NetRadioPreset",
+                "name":  "Net Radio Preset",
                 "type":  "string",
                 "role":  "state",
                 "read":  true,
-                "write": false
+                "write": true
             }
         },
 		{
             "_id": "Zone2.InputSelect",
             "type": "state",
             "common": {
-                "name":  "InputSelect",
+                "name":  "Input Select",
                 "type":  "string",
                 "role":  "media.input",
                 "read":  true,
-                "write": false
+                "write": true
             }
         },
 		{
             "_id": "Zone2.Mute",
             "type": "state",
             "common": {
-                "name":  "InputMute",
+                "name":  "Input Mute",
                 "type":  "string",
                 "role":  "media.mute",
                 "read":  true,
-                "write": false
+                "write": true
             }
         },
 		{
             "_id": "Zone2.TunerPreset",
             "type": "state",
             "common": {
-                "name":  "TunerPreset",
+                "name":  "Tuner Preset",
                 "type":  "string",
                 "role":  "state",
                 "read":  true,
-                "write": false
+                "write": true
             }
         },
 		{
@@ -262,7 +262,7 @@
             "_id": "Device.ListeningMode",
             "type": "state",
             "common": {
-                "name":  "ListeningMode",
+                "name":  "Listening Mode",
                 "type":  "string",
                 "role":  "state",
                 "read":  true,
@@ -277,7 +277,7 @@
             "_id": "Device.AudioInformation",
             "type": "state",
             "common": {
-                "name":  "AudioInformation",
+                "name":  "Audio Information",
                 "type":  "string",
                 "role":  "state",
                 "read":  true,
@@ -292,7 +292,7 @@
             "_id": "Device.VideoInformation",
             "type": "state",
             "common": {
-                "name":  "VideoInformation",
+                "name":  "Video Information",
                 "type":  "string",
                 "role":  "state",
                 "read":  true,
@@ -307,7 +307,7 @@
             "_id": "Device.MediaArtistNameInfo",
             "type": "state",
             "common": {
-                "name":  "MediaArtistNameInfo",
+                "name":  "Media Artist Name Info",
                 "type":  "string",
                 "role":  "media.artist",
                 "read":  true,
@@ -322,7 +322,7 @@
             "_id": "Device.MediaTitelName",
             "type": "state",
             "common": {
-                "name":  "MediaTitelName",
+                "name":  "Media Titel Name",
                 "type":  "string",
                 "role":  "media.title",
                 "read":  true,
@@ -337,7 +337,7 @@
             "_id": "Device.MediaTimeInfo",
             "type": "state",
             "common": {
-                "name":  "MediaTimeInfo",
+                "name":  "Media Time Info",
                 "type":  "string",
                 "role":  "media.duration.text",
                 "read":  true,
@@ -352,7 +352,7 @@
             "_id": "Device.MediaTimeCurrent",
             "type": "state",
             "common": {
-                "name":  "MediaTimeCurrent",
+                "name":  "Media Time Current",
                 "type":  "string",
                 "role":  "media.elapsed.text",
                 "read":  true,
@@ -367,7 +367,7 @@
             "_id": "Device.MediaTime",
             "type": "state",
             "common": {
-                "name":  "MediaTime",
+                "name":  "Media Time",
                 "type":  "string",
                 "role":  "media.elapsed.text",
                 "read":  true,
@@ -382,7 +382,7 @@
             "_id": "Device.MediaAlbumName",
             "type": "state",
             "common": {
-                "name":  "MediaAlbumName",
+                "name":  "Media Album Name",
                 "type":  "string",
                 "role":  "media.album",
                 "read":  true,
@@ -397,7 +397,7 @@
             "_id": "Device.MediaTrack",
             "type": "state",
             "common": {
-                "name":  "MediaTrack",
+                "name":  "Media Track",
                 "type":  "string",
                 "role":  "media.track",
                 "read":  true,
@@ -412,11 +412,11 @@
             "_id": "Device.MediaStop",
             "type": "state",
             "common": {
-                "name":  "MediaStop",
+                "name":  "Media Stop",
                 "type":  "boolean",
                 "role":  "button.stop",
                 "read":  true,
-                "write": false,
+                "write": true,
                 "def":   "false"
             },
             "native": {
@@ -427,11 +427,11 @@
             "_id": "Device.MediaPlay",
             "type": "state",
             "common": {
-                "name":  "MediaPlay",
+                "name":  "Media Play",
                 "type":  "boolean",
                 "role":  "button.play",
                 "read":  true,
-                "write": false,
+                "write": true,
                 "def":   "false"
             },
             "native": {
@@ -442,11 +442,11 @@
             "_id": "Device.MediaPause",
             "type": "state",
             "common": {
-                "name":  "MediaPause",
+                "name":  "Media Pause",
                 "type":  "boolean",
                 "role":  "button.pause",
                 "read":  true,
-                "write": false,
+                "write": true,
                 "def":   "false"
             },
             "native": {
@@ -457,11 +457,11 @@
             "_id": "Device.MediaForward",
             "type": "state",
             "common": {
-                "name":  "MediaForward",
+                "name":  "Media Forward",
                 "type":  "boolean",
                 "role":  "button.forward",
                 "read":  true,
-                "write": false,
+                "write": true,
                 "def":   "false"
             },
             "native": {
@@ -472,11 +472,11 @@
             "_id": "Device.MediaFastForward",
             "type": "state",
             "common": {
-                "name":  "MediaFastForward",
+                "name":  "Media Fast Forward",
                 "type":  "boolean",
                 "role":  "button.fastforward",
                 "read":  true,
-                "write": false,
+                "write": true,
                 "def":   "false"
             },
             "native": {
@@ -487,11 +487,11 @@
             "_id": "Device.MediaReverse",
             "type": "state",
             "common": {
-                "name":  "MediaReverse",
+                "name":  "Media Reverse",
                 "type":  "boolean",
                 "role":  "button.reverse",
                 "read":  true,
-                "write": false,
+                "write": true,
                 "def":   "false"
             },
             "native": {
@@ -502,11 +502,11 @@
             "_id": "Device.MediaFastReverse",
             "type": "state",
             "common": {
-                "name":  "MediaFastReverse",
+                "name":  "Media Fast Reverse",
                 "type":  "boolean",
                 "role":  "button.fastreverse",
                 "read":  true,
-                "write": false,
+                "write": true,
                 "def":   "false"
             },
             "native": {
@@ -517,7 +517,7 @@
             "_id": "Device.MediaRepeat",
             "type": "state",
             "common": {
-                "name":  "MediaRepeat",
+                "name":  "Media Repeat",
                 "type":  "boolean",
                 "role":  "media.mode.repeat",
                 "read":  true,
@@ -532,7 +532,7 @@
             "_id": "Device.MediaState",
             "type": "state",
             "common": {
-                "name":  "MediaState",
+                "name":  "Media State",
                 "type":  "text",
                 "role":  "media.state",
                 "read":  true,
@@ -547,7 +547,7 @@
             "_id": "Device.MediaModeShuffle",
             "type": "state",
             "common": {
-                "name":  "MediaModeShuffle",
+                "name":  "Media Mode Shuffle",
                 "type":  "number",
                 "role":  "media.mode.shuffle",
                 "read":  true,
@@ -562,7 +562,7 @@
             "_id": "Device.MediaModeShuffleStatus",
             "type": "state",
             "common": {
-                "name":  "MediaModeShuffleStatus",
+                "name":  "Media Mode Shuffle Status",
                 "type":  "string",
                 "role":  "state",
                 "read":  true,
@@ -573,6 +573,139 @@
                 "command": "MediaModeShuffleStatus"
             }
         },
+		{
+            "_id": "Device.MediaTrackUp",
+            "type": "state",
+            "common": {
+                "name":  "Media Track Up",
+                "type":  "boolean",
+                "role":  "button",
+                "read":  true,
+                "write": true,
+                "def":   "-"
+            }
+        },
+		{
+            "_id": "Device.MediaTrackDown",
+            "type": "state",
+            "common": {
+                "name":  "Media Track Down",
+                "type":  "boolean",
+                "role":  "button",
+                "read":  true,
+                "write": true,
+                "def":   "-"
+            }
+        },
+		{
+            "_id": "Device.MediaRight",
+            "type": "state",
+            "common": {
+                "name":  "Media Right",
+                "type":  "boolean",
+                "role":  "button",
+                "read":  true,
+                "write": true,
+                "def":   "-"
+            }
+        },
+		{
+            "_id": "Device.MediaLeft",
+            "type": "state",
+            "common": {
+                "name":  "Media Left",
+                "type":  "boolean",
+                "role":  "button",
+                "read":  true,
+                "write": true,
+                "def":   "-"
+            }
+        },
+		{
+            "_id": "Device.MediaUp",
+            "type": "state",
+            "common": {
+                "name":  "Media Up",
+                "type":  "boolean",
+                "role":  "button",
+                "read":  true,
+                "write": true,
+                "def":   "-"
+            }
+        },
+		{
+            "_id": "Device.MediaDown",
+            "type": "state",
+            "common": {
+                "name":  "Media Down",
+                "type":  "boolean",
+                "role":  "button",
+                "read":  true,
+                "write": true,
+                "def":   "-"
+            }
+        },
+		{
+            "_id": "Device.MediaSelect",
+            "type": "state",
+            "common": {
+                "name":  "Media Select",
+                "type":  "boolean",
+                "role":  "button",
+                "read":  true,
+                "write": true,
+                "def":   "-"
+            }
+        },
+		{
+            "_id": "Device.MediaDelete",
+            "type": "state",
+            "common": {
+                "name":  "Media Delete",
+                "type":  "boolean",
+                "role":  "button",
+                "read":  true,
+                "write": true,
+                "def":   "-"
+            }
+        },
+		{
+            "_id": "Device.MediaReturn",
+            "type": "state",
+            "common": {
+                "name":  "Media Return",
+                "type":  "boolean",
+                "role":  "button",
+                "read":  true,
+                "write": true,
+                "def":   "-"
+            }
+        },
+		{
+            "_id": "Device.MediaMenu",
+            "type": "state",
+            "common": {
+                "name":  "Media Menu",
+                "type":  "boolean",
+                "role":  "button",
+                "read":  true,
+                "write": true,
+                "def":   "-"
+            }
+        },
+		{
+            "_id": "Device.MediaTop",
+            "type": "state",
+            "common": {
+                "name":  "Media Top Menu",
+                "type":  "boolean",
+                "role":  "button",
+                "read":  true,
+                "write": true,
+                "def":   "-"
+            }
+        },
+		
 		{
             "_id": "Device.RAW",
             "type": "state",

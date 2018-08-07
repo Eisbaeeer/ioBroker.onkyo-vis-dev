@@ -31,7 +31,7 @@ var adapter = utils.adapter({
 			adapter.log.debug('Value: ' + state.val);
 			adapter.log.debug('id: ' + id);
 		
-			if (id == adapter.namespace + '.' +'command') {
+			if (id == adapter.namespace + '.' +'Device.command') {
 					var newcommand = state.val;
 						adapter.log.debug('newcommand: ' + newcommand);
 			if (newcommand) {				
@@ -45,8 +45,8 @@ var adapter = utils.adapter({
               if (id == adapter.namespace + '.' +'RAW') {
                 new_val = state.val;
 				adapter.log.debug('Send RAW to Receiver: ' + new_val);
-				adapter.setState (adapter.namespace + '.' + 'command', {val: new_val, ack: false});
-				adapter.setState (adapter.namespace + '.' + 'RAW', {val: null, ack: true});
+				adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+				adapter.setState (adapter.namespace + '.' + 'Device.RAW', {val: null, ack: true});
                   }
 			  
 			  // Volume Zone1
@@ -61,7 +61,7 @@ var adapter = utils.adapter({
               new_val = decimalToHex(new_val).toUpperCase();  //call function decimalToHex();
               new_val = 'MVL' + new_val;
               adapter.log.debug('new_val: ' + new_val);
-			  adapter.setState (adapter.namespace + '.' + 'command', {val: new_val, ack: false});
+			  adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
                   }
                   
               // Volume Zone2                    
@@ -76,7 +76,7 @@ var adapter = utils.adapter({
               new_val = decimalToHex(new_val).toUpperCase();  //call function decimalToHex();
               new_val = 'ZVL' + new_val;
               adapter.log.debug('new_val: ' + new_val);
-              adapter.setState (adapter.namespace + '.' + 'command', {val: new_val, ack: false});
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
                   }
 
               // Audio_Mute_Zone1                    
@@ -91,7 +91,7 @@ var adapter = utils.adapter({
                       } 
               new_val = 'AMT' + new_val;
               adapter.log.debug('new_val: ' + new_val);
-              adapter.setState (adapter.namespace + '.' + 'command', {val: new_val, ack: false});
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
                   }        
 
               // Audio_Mute_Zone2                    
@@ -105,7 +105,7 @@ var adapter = utils.adapter({
                       } 
               new_val = 'ZMT' + new_val;
               adapter.log.debug('new_val: ' + new_val);
-              adapter.setState (adapter.namespace + '.' + 'command', {val: new_val, ack: false});
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
                   }        
               
               // Input_Select_Zone1       SLI
@@ -113,7 +113,7 @@ var adapter = utils.adapter({
                   new_val = state.val;
                   new_val = 'SLI' + new_val;
               adapter.log.debug('new_val: ' + new_val);
-              adapter.setState (adapter.namespace + '.' + 'command', {val: new_val, ack: false});
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
                   }        
 
               // Input_Select_Zone2       SLZ
@@ -121,7 +121,7 @@ var adapter = utils.adapter({
                   new_val = state.val;
                   new_val = 'SLZ' + new_val;
               adapter.log.debug('new_val: ' + new_val);
-              adapter.setState (adapter.namespace + '.' + 'command', {val: new_val, ack: false});
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
                   }        
                           
               // Internet_Radio_Preset_Zone1   NPR                  
@@ -130,7 +130,7 @@ var adapter = utils.adapter({
               new_val = decimalToHex(state.val).toUpperCase();  //call function decimalToHex();
               new_val = 'NPR' + new_val;
               adapter.log.debug('new_val: ' + new_val);
-              adapter.setState (adapter.namespace + '.' + 'command', {val: new_val, ack: false});
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
                   }
 
               // Internet_Radio_Preset_Zone2   NPZ
@@ -139,7 +139,7 @@ var adapter = utils.adapter({
               new_val = decimalToHex(state.val).toUpperCase();  //call function decimalToHex();
               new_val = 'NPZ' + new_val;
               adapter.log.debug('new_val: ' + new_val);
-              adapter.setState (adapter.namespace + '.' + 'command', {val: new_val, ack: false});
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
                   }                          
               
               // Tuner_Preset_Zone1  PRS
@@ -148,7 +148,7 @@ var adapter = utils.adapter({
               new_val = decimalToHex(state.val).toUpperCase();  //call function decimalToHex();
               new_val = 'PRS' + new_val;
               adapter.log.debug('new_val: ' + new_val);
-              adapter.setState (adapter.namespace + '.' + 'command', {val: new_val, ack: false});
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
                   }                          
 
               // Tuner_Preset_Zone2  PRZ
@@ -157,7 +157,7 @@ var adapter = utils.adapter({
               new_val = decimalToHex(state.val).toUpperCase();  //call function decimalToHex();
               new_val = 'PRZ' + new_val;
               adapter.log.debug('new_val: ' + new_val);
-              adapter.setState (adapter.namespace + '.' + 'command', {val: new_val, ack: false});
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
                   }                          
 
               // Power_Zone1    PWR
@@ -171,7 +171,7 @@ var adapter = utils.adapter({
                       } 
               new_val = 'PWR' + new_val;
               adapter.log.debug('new_val: ' + new_val);
-              adapter.setState (adapter.namespace + '.' + 'command', {val: new_val, ack: false});
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
                   }        
  
               // Power_Zone2    ZPW
@@ -185,9 +185,187 @@ var adapter = utils.adapter({
                       } 
               new_val = 'ZPW' + new_val;
               adapter.log.debug('new_val: ' + new_val);
-              adapter.setState (adapter.namespace + '.' + 'command', {val: new_val, ack: false});
-                  }        
-              
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+                  }  
+
+			// NET USB Play
+              if (id == adapter.namespace + '.' +'Device.MediaPlay') {
+                  new_val = state.val;
+                  if (new_val == true) {
+                      new_val = 'PLAY';
+                      }
+              new_val = 'NTC' + new_val;
+              adapter.log.debug('new_val: ' + new_val);
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+                  } 
+            // NET USB Pause
+              if (id == adapter.namespace + '.' +'Device.MediaPause') {
+                  new_val = state.val;
+                  if (new_val == true) {
+                      new_val = 'PAUSE';
+                      }
+              new_val = 'NTC' + new_val;
+              adapter.log.debug('new_val: ' + new_val);
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+                  } 
+            // NET USB Stop
+              if (id == adapter.namespace + '.' +'Device.MediaStop') {
+                  new_val = state.val;
+                  if (new_val == true) {
+                      new_val = 'Stop';
+                      }
+              new_val = 'NTC' + new_val;
+              adapter.log.debug('new_val: ' + new_val);
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+                  } 
+			// NET USB Track Up
+              if (id == adapter.namespace + '.' +'Device.MediaTrackUp') {
+                  new_val = state.val;
+                  if (new_val == true) {
+                      new_val = 'TRUP';
+                      }
+              new_val = 'NTC' + new_val;
+              adapter.log.debug('new_val: ' + new_val);
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+			  adapter.setState (adapter.namespace + '.' + 'Device.MediaTrackUp', {val: "", ack: true});
+                  }	  
+			// NET USB Track Down
+              if (id == adapter.namespace + '.' +'Device.MediaTrackDown') {
+                  new_val = state.val;
+                  if (new_val == true) {
+                      new_val = 'TRDN';
+                      }
+              new_val = 'NTC' + new_val;
+              adapter.log.debug('new_val: ' + new_val);
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+			  adapter.setState (adapter.namespace + '.' + 'Device.MediaTrackDown', {val: "", ack: true});
+                  }	
+			// NET USB Right
+              if (id == adapter.namespace + '.' +'Device.MediaRight') {
+                  new_val = state.val;
+                  if (new_val == true) {
+                      new_val = 'RIGHT';
+                      }
+              new_val = 'NTC' + new_val;
+              adapter.log.debug('new_val: ' + new_val);
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+			  adapter.setState (adapter.namespace + '.' + 'Device.MediaRight', {val: "", ack: true});
+                  }	
+			// NET USB Left
+              if (id == adapter.namespace + '.' +'Device.MediaLeft') {
+                  new_val = state.val;
+                  if (new_val == true) {
+                      new_val = 'LEFT';
+                      }
+              new_val = 'NTC' + new_val;
+              adapter.log.debug('new_val: ' + new_val);
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+			  adapter.setState (adapter.namespace + '.' + 'Device.MediaLeft', {val: "", ack: true});
+                  }		  
+			// NET USB Up
+              if (id == adapter.namespace + '.' +'Device.MediaUp') {
+                  new_val = state.val;
+                  if (new_val == true) {
+                      new_val = 'UP';
+                      }
+              new_val = 'NTC' + new_val;
+              adapter.log.debug('new_val: ' + new_val);
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+			  adapter.setState (adapter.namespace + '.' + 'Device.MediaUp', {val: "", ack: true});
+                  }	
+			// NET USB Down
+              if (id == adapter.namespace + '.' +'Device.MediaDown') {
+                  new_val = state.val;
+                  if (new_val == true) {
+                      new_val = 'Down';
+                      }
+              new_val = 'NTC' + new_val;
+              adapter.log.debug('new_val: ' + new_val);
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+			  adapter.setState (adapter.namespace + '.' + 'Device.MediaDown', {val: "", ack: true});
+                  }		  
+			// NET USB Select
+              if (id == adapter.namespace + '.' +'Device.MediaSelect') {
+                  new_val = state.val;
+                  if (new_val == true) {
+                      new_val = 'SELECT';
+                      }
+              new_val = 'NTC' + new_val;
+              adapter.log.debug('new_val: ' + new_val);
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+			  adapter.setState (adapter.namespace + '.' + 'Device.MediaSelect', {val: "", ack: true});
+                  }	
+			// NET USB Delete
+              if (id == adapter.namespace + '.' +'Device.MediaDelete') {
+                  new_val = state.val;
+                  if (new_val == true) {
+                      new_val = 'DELETE';
+                      }
+              new_val = 'NTC' + new_val;
+              adapter.log.debug('new_val: ' + new_val);
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+			  adapter.setState (adapter.namespace + '.' + 'Device.MediaDelete', {val: "", ack: true});
+                  }		  
+			// NET USB Return
+              if (id == adapter.namespace + '.' +'Device.MediaReturn') {
+                  new_val = state.val;
+                  if (new_val == true) {
+                      new_val = 'RETURN';
+                      }
+              new_val = 'NTC' + new_val;
+              adapter.log.debug('new_val: ' + new_val);
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+			  adapter.setState (adapter.namespace + '.' + 'Device.MediaReturn', {val: "", ack: true});
+                  }	
+			// NET USB Menu
+              if (id == adapter.namespace + '.' +'Device.MediaMenu') {
+                  new_val = state.val;
+                  if (new_val == true) {
+                      new_val = 'MENU';
+                      }
+              new_val = 'NTC' + new_val;
+              adapter.log.debug('new_val: ' + new_val);
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+			  adapter.setState (adapter.namespace + '.' + 'Device.MediaMenu', {val: "", ack: true});
+                  }		  
+			// NET USB Top
+              if (id == adapter.namespace + '.' +'Device.MediaTop') {
+                  new_val = state.val;
+                  if (new_val == true) {
+                      new_val = 'TOP';
+                      }
+              new_val = 'NTC' + new_val;
+              adapter.log.debug('new_val: ' + new_val);
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+			  adapter.setState (adapter.namespace + '.' + 'Device.MediaTop', {val: "", ack: true});
+                  }		  
+				  
+				  
+				  
+			 /* THIS PART MUST BE REALIZED LATER (100ms continuously)
+			 
+			 // NET USB Reverse - Continuesly must be send faster 100ms
+              if (id == adapter.namespace + '.' +'Device.MediaReverse') {
+                  new_val = state.val;
+                  if (new_val == true) {
+                      new_val = 'REW';
+                      }
+              new_val = 'NTC' + new_val;
+              adapter.log.debug('new_val: ' + new_val);
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+                  } 	  
+            // NET USB Forward - Continuesly must be send faster 100ms
+              if (id == adapter.namespace + '.' +'Device.MediaForward') {
+                  new_val = state.val;
+                  if (new_val == true) {
+                      new_val = 'FF';
+                      }
+              new_val = 'NTC' + new_val;
+              adapter.log.debug('new_val: ' + new_val);
+              adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+                  } 
+             */  
+			
            }       
         }
 	},
@@ -253,7 +431,7 @@ function main() {
 
     eiscp.on('connect', function () {
         adapter.log.info('Successfully connected to AVR');
-        adapter.setState('connected', {val: true, ack: true});
+        adapter.setState('Device.connected', {val: true, ack: true});
 
         // Query some initial information
         
@@ -287,7 +465,7 @@ function main() {
         setTimeout(function () {
             // Try to read initial values
             for (var i = 0; i < datapoints.length; i++) {
-                adapter.setState (adapter.namespace + '.' + 'command', {val: datapoints[i], ack: false});
+                adapter.setState (adapter.namespace + '.' + 'Device.command', {val: datapoints[i], ack: false});
                 }
         }, 5000);
     });
