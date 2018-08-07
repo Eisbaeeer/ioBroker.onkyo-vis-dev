@@ -30,7 +30,7 @@
         "platform":                 "Javascript/Node.js",
         "loglevel":                 "info",
         "keywords":                 ["onkyo", "avr", "eiscp"],
-        "main":                     "onkyo.js",
+        "main":                     "main.js",
         "authors": [
             "Oliver Wagner <owagner@tellerulam.com>",
             "Lars Weimar <Eisbaeeer@gmail.com>"
@@ -46,7 +46,9 @@
     },
     "native": {
         "avrAddress":  "",
-        "avrPort": 60128
+        "avrPort": 60128,
+		"maxvolzone1": 40,
+		"maxvolzone2":40
     },
     "objects": [
 

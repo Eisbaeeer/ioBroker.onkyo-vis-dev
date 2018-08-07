@@ -39,6 +39,7 @@
   "bugs": {
     "url": "https://github.com/Eisbaeeer/ioBroker.onkyo-vis/issues"
   },
+  "main": "main.js",
   "scripts": {
     "test": "node node_modules/mocha/bin/mocha"
   },
