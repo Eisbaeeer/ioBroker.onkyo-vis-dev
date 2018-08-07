@@ -40,12 +40,13 @@
     "loglevel":     "info", 
     "icon": "onkyo.png",
     "enabled": true,
-    "extIcon": "https://raw.githubusercontent.com/Eisbaeeer/ioBroker.onkyo-vis/master/admin/onkyo.png",
+    "extIcon": "https://raw.githubusercontent.com/Eisbaeeer/ioBroker.onkyo-vis-dev/master/admin/onkyo.png",
     "keywords": [
-      "Möhlenhoff",
-      "Alpha2"
+      "Onkyo",
+      "AVR",
+	  "eiscp"
     ],
-    "readme": "https://github.com/Eisbaeeer/ioBroker.onkyo-vis/blob/master/README.md",
+    "readme": "https://github.com/Eisbaeeer/ioBroker.onkyo-vis-dev/blob/master/README.md",
     "type": "multimedia",
 	"license": "MIT"
   },
