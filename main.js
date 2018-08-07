@@ -40,13 +40,7 @@ var adapter = utils.adapter({
 			} else {
                         
           // Here we go and send command from accepted Objects to command var
-		  
-			// SET command with received info
-			new_val = state.val;
-			adapter.log.debug('Received from Onkyo: ' + new_val);
-			adapter.setState (adapter.namespace + '.' + 'command', {val: new_val, ack: true});
- 			  
- 			  
+		   			  
 			  // SET RAW EISCP COMMAND
               if (id == adapter.namespace + '.' +'Device.RAW') {
                 new_val = state.val;
@@ -495,7 +489,10 @@ function main() {
                                     }        
  
         adapter.log.debug('chunk: ' + chunk);
-        adapter.log.debug('string: ' + string);   
+        adapter.log.debug('string: ' + string); 
+
+	// SET command with received info
+	adapter.setState (adapter.namespace + '.' + 'Device.command', {val: cmd.iscp_command, ack: true});
    
      //Onkyo_Power_Zone1
     if (chunk == 'PWR')  {
