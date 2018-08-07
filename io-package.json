@@ -1,14 +1,8 @@
 {
-    "common": {
-        "name":                     "onkyo-vis-dev",
-        "title":                    "Onkyo EISCP - VIS compatible",
-		"titleLang": {
-            "en": "Onkyo EISCP - VIS compatible",
-            "de": "Onkyo EISCP - VIS kompatibel"
-        },
-        "desc":                     "Control Onkyo AVRs with EISCP protocol and VIS support",
-        "version":                  "1.1.0",
-		"news": {
+  "common": {
+    "name": "onkyo-vis-dev",
+    "version": "1.1.0",
+	"news": {
             "1.1.0": {
                 "en": "Completely new structured",
                 "de": "Neue Objekt Struktur"
@@ -26,34 +20,43 @@
                 "de": "Error log säubern"
 				}
             },
-        "mode":                     "daemon",
-        "platform":                 "Javascript/Node.js",
-        "loglevel":                 "info",
-        "keywords":                 ["onkyo", "avr", "eiscp"],
-        "main":                     "main.js",
-        "authors": [
-            "Oliver Wagner <owagner@tellerulam.com>",
-            "Lars Weimar <Eisbaeeer@gmail.com>"
-        ],
-        "license":                  "MIT",
-        "readme":                   "https://github.com/Eisbaeeer/ioBroker.onkyo-vis/blob/master/README.md",
-        "icon":                     "onkyo.png",
-        "type":                     "multimedia",
-        "materialize":  true,
-        "enabled": true,	  
-        "license": "MIT",
-        "extIcon":                  "https://raw.githubusercontent.com/Eisbaeeer/ioBroker.onkyo-vis/master/admin/onkyo.png"
+    "title": "Onkyo EISCP - VIS compatible",
+	"titleLang": {
+            "en": "Onkyo EISCP - VIS compatible",
+            "de": "Onkyo EISCP - VIS kompatibel"
+        },
+    "desc": {
+      "en": "Control Onkyo AVRs with EISCP protocol and VIS support",
+      "de": "Control Onkyo AVRs with EISCP protocol and VIS support"
     },
-    "native": {
+    "authors": [
+      "Oliver Wagner <owagner@tellerulam.com>",
+      "Lars Weimar <Eisbaeeer@gmail.com>"
+    ],
+    "desc":         "Control Onkyo AVRs with EISCP protocol and VIS support",
+    "platform": "Javascript/Node.js",
+    "mode": "daemon",
+    "materialize":  true,
+    "loglevel":     "info", 
+    "icon": "onkyo.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/Eisbaeeer/ioBroker.onkyo-vis/master/admin/onkyo.png",
+    "keywords": [
+      "Möhlenhoff",
+      "Alpha2"
+    ],
+    "readme": "https://github.com/Eisbaeeer/ioBroker.onkyo-vis/blob/master/README.md",
+    "type": "multimedia",
+	"license": "MIT"
+  },
+  "native": {
         "avrAddress":  "",
         "avrPort": 60128,
 		"maxvolzone1": 40,
 		"maxvolzone2":40
     },
-    "objects": [
-
-    ],
-    "instanceObjects": [
+  "objects": [],
+"instanceObjects": [
 		{
             "_id": "Zone1",
             "type": "object",

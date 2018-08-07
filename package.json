@@ -8,7 +8,7 @@
     "bluefox <bluefox@ccu.io>",
     "Lars Weimar <Eisbaeeer@gmail.com>"
   ],
-  "homepage": "https://github.com/Eisbaeeer/ioBroker.onkyo-vis",
+  "homepage": "https://github.com/Eisbaeeer/ioBroker.onkyo-vis-dev",
   "license": "MIT",
   "keywords": [
     "ioBroker",
@@ -37,9 +37,8 @@
       "chai": "^4.1.2"
   },
   "bugs": {
-    "url": "https://github.com/Eisbaeeer/ioBroker.onkyo-vis/issues"
+    "url": "https://github.com/Eisbaeeer/ioBroker.onkyo-vis-dev/issues"
   },
-  "main": "main.js",
   "scripts": {
     "test": "node node_modules/mocha/bin/mocha"
   },
