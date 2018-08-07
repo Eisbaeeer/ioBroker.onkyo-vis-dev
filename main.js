@@ -212,7 +212,7 @@ var adapter = utils.adapter({
               if (id == adapter.namespace + '.' +'Device.MediaStop') {
                   new_val = state.val;
                   if (new_val == true) {
-                      new_val = 'Stop';
+                      new_val = 'STOP';
                       }
               new_val = 'NTC' + new_val;
               adapter.log.debug('new_val: ' + new_val);
