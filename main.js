@@ -478,7 +478,7 @@ function main() {
 
     eiscp.on("data", function (cmd) {
         adapter.log.debug('Got message: ' + JSON.stringify(cmd));
-        adapter.log.info('EISCP String: ' + cmd.iscp_command);
+        adapter.log.debug('EISCP String: ' + cmd.iscp_command);
     // Here we go to select the RAW feedback and take it to the right variable. The RAW is in cmd.iscp_command
   
         var chunk = cmd.iscp_command.substr(0,3);
@@ -726,7 +726,7 @@ function main() {
 
   //Onkyo_NET/USB_Title_Name
       if (chunk == 'NTI')  {
-        adapter.setState (adapter.namespace + '.' + 'MediaTitelName', {val: string, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Device.MediaTitelName', {val: string, ack: true});
                     }
 
   //Onkyo_NET/USB_Track_Info
