@@ -27,6 +27,9 @@ Example of VIS view
 * Adding new admin to adapter
 
 ## ChangeLog
+### 1.1.1
+* (Eisbaeeer) Update zone 2 volume after power on. Adding Pioneer Receivers with eiscp support.
+
 ### 1.1.0
 * (Eisbaeeer) Completely new structure (Zone1, Zone2, Device)
 

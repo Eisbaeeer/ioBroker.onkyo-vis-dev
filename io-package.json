@@ -1,9 +1,13 @@
 {
   "common": {
     "name": "onkyo-vis-dev",
-    "version": "1.1.0",
+    "version": "1.1.1",
 	"news": {
-            "1.1.0": {
+            "1.1.1": {
+                "en": "Update volume zone2 after power on. Adding Pioneer receivers with EISCP support.",
+                "de": "Volume Zone 2 nach dem Einschalten aktualisieren. Pionneer Receiver support für EISCP fähige Geräte."
+				},
+			"1.1.0": {
                 "en": "Completely new structured",
                 "de": "Neue Objekt Struktur"
 				},

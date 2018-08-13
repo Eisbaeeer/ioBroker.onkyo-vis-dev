@@ -186,6 +186,7 @@ var adapter = utils.adapter({
               new_val = 'ZPW' + new_val;
               adapter.log.debug('new_val: ' + new_val);
               adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+			  adapter.setState (adapter.namespace + '.' + 'Device.command', {val: 'ZVLQSTN', ack: false});
                   }  
 
 			// NET USB Play
