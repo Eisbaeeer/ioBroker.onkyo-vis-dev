@@ -710,7 +710,18 @@
                 "def":   "-"
             }
         },
-		
+		{
+            "_id": "Device.CoverBase64",
+            "type": "state",
+            "common": {
+                "name":  "Cover Base64",
+                "type":  "string",
+                "role":  "state",
+                "read":  true,
+                "write": false,
+                "def":   ""
+            }
+        },
 		{
             "_id": "Device.RAW",
             "type": "state",

@@ -795,7 +795,8 @@ function main() {
                                                          });
       adapter.log.debug('Adapter SET Reciver_ListInfo: ' + ((cmd.iscp_command).slice(12).substring(0, ((cmd.iscp_command).slice(12).indexOf('</response>'))+11)));
                         }
-
+	*/
+	
   //Onkyo_Cover_Transfer (base64 coded in HEX)
     if (chunk == 'NJA') {
     var covertype = string.substr(0,1)
@@ -819,11 +820,10 @@ function main() {
       if (packetflag == '2') {
         imageb64 = imageb64 + new Buffer(cmd.iscp_command.substr(5), 'hex').toString('base64');
         var img = 'data:image/' + image_type + ';base64,' + imageb64;
-        adapter.setState (adapter.namespace + '.' + 'Cover_Transfer', {val: img, ack: true});       
+        adapter.setState (adapter.namespace + '.' + 'Device.CoverBase64', {val: img, ack: true});       
                             }
-        
                         }
-
+	/*
     //Onkyo Navigation on "Network-Mode"
       if (chunk == 'NLT')  {
         var string_nlt = string.substr(22,40);
