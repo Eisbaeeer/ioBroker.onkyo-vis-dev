@@ -771,10 +771,6 @@ function main() {
         string = parseInt(string, 16);              //convert hex to decimal
         adapter.setState (adapter.namespace + '.' + 'Zone2.Volume', {val: string, ack: true});
                     }
-            });          
-
-
-
  
 /*
   //Onkyo_AVR_INFO (xml)
@@ -823,6 +819,8 @@ function main() {
         adapter.setState (adapter.namespace + '.' + 'Device.CoverBase64', {val: img, ack: true});       
                             }
                         }
+						
+	});  					
 	/*
     //Onkyo Navigation on "Network-Mode"
       if (chunk == 'NLT')  {
