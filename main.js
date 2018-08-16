@@ -4,6 +4,7 @@
 
 const eiscp = require('eiscp');
 const xml2js = require('xml2js');
+var fs = require('fs');
 var parser = new xml2js.Parser({ explicitArray: true });
 
 // you have to require the adapter module and pass a options object
@@ -815,8 +816,13 @@ function main() {
                             }
       if (packetflag == '2') {
         imageb64 = imageb64 + new Buffer(cmd.iscp_command.substr(5), 'hex').toString('base64');
-        var img = 'data:image/' + image_type + ';base64,' + imageb64;
-        adapter.setState (adapter.namespace + '.' + 'Device.CoverBase64', {val: img, ack: true});       
+        var img = '<img width="100%" height="100%" title="" alt="cross" src="data:image/' + image_type + ';base64,' + imageb64 +'">';
+        adapter.setState (adapter.namespace + '.' + 'Device.CoverBase64', {val: img, ack: true});  
+			// safe bas64 data to file
+			fs.writeFileSync('/opt/iobroker/CoverImage.' + image_type, imageb64, {encoding: 'base64'}, function(err) {
+			adapter.log.debug('Cover file created');
+			});
+			
                             }
                         }
 						
