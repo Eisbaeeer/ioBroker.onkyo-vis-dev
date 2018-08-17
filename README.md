@@ -7,7 +7,7 @@
 [![NPM](https://nodei.co/npm/iobroker.onkyo-vis-dev.png?downloads=true)](https://nodei.co/npm/iobroker.onkyo-vis-dev/)
 
 
-This adapter allows control of Onkyo AVRs using the EISCP protocol.
+This adapter allows control of Onkyo and Pioneer AVRs using the EISCP protocol.
 
 It uses node-eiscp: https://github.com/tillbaks/node-eiscp
 
@@ -23,10 +23,10 @@ showing whether node-eiscp is currently connected to a receiver.
 Example of VIS view
 ![VIS](admin/onkyo-vis.png)     
 
-## ToDo
-* Adding new admin to adapter
-
 ## ChangeLog
+### 1.1.2
+* (Eisbaeeer) Adding CoverArt
+
 ### 1.1.1
 * (Eisbaeeer) Update zone 2 volume after power on. Adding Pioneer Receivers with eiscp support.
 

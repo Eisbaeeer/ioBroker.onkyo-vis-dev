@@ -1,9 +1,13 @@
 {
   "common": {
     "name": "onkyo-vis-dev",
-    "version": "1.1.1",
+    "version": "1.1.2",
 	"news": {
-            "1.1.1": {
+            "1.1.2": {
+                "en": "Adding CoverArt",
+                "de": "CoverArt hinzugefügt"
+				},
+			"1.1.1": {
                 "en": "Update volume zone2 after power on. Adding Pioneer receivers with EISCP support.",
                 "de": "Volume Zone 2 nach dem Einschalten aktualisieren. Pionneer Receiver support für EISCP fähige Geräte."
 				},
@@ -715,6 +719,18 @@
             "type": "state",
             "common": {
                 "name":  "Cover Base64",
+                "type":  "string",
+                "role":  "state",
+                "read":  true,
+                "write": false,
+                "def":   ""
+            }
+        },
+		{
+            "_id": "Device.CoverURL",
+            "type": "state",
+            "common": {
+                "name":  "Cover URL",
                 "type":  "string",
                 "role":  "state",
                 "read":  true,
