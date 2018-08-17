@@ -817,12 +817,12 @@ function main() {
       if (packetflag == '2') {
         imageb64 = imageb64 + new Buffer(cmd.iscp_command.substr(5), 'hex').toString('base64');
         var img = '<img width="100%" height="100%" title="" alt="cross" src="data:image/' + image_type + ';base64,' + imageb64 +'">';
+		var coverurl = '/vis/CoverImage.' + image_type;
+		adapter.setState (adapter.namespace + '.' + 'Device.CoverURL', {val: coverurl, ack: true});
         adapter.setState (adapter.namespace + '.' + 'Device.CoverBase64', {val: img, ack: true});  
 			// safe bas64 data to file
 			fs.writeFileSync('/opt/iobroker/iobroker-data/files/vis/CoverImage.' + image_type, imageb64, {encoding: 'base64'}, function(err) {
 			adapter.log.debug('Cover file created');
-		var coverurl = '/vis/CoverImage.' + image_type';
-		adapter.setState (adapter.namespace + '.' + 'Device.CoverURL', {val: coverurl, ack: true});
 			});
 			
                             }
