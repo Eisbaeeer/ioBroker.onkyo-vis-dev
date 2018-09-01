@@ -460,7 +460,8 @@ function main() {
 		  'TUNQSTN',
 		  'TUZQSTN',
 		  'IFVQSTN',
-      'SLAQSTN'
+		  'SLAQSTN',
+		  'NRIQSTN'
           );
 	
         
