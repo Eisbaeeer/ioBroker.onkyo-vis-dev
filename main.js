@@ -773,26 +773,25 @@ function main() {
         adapter.setState (adapter.namespace + '.' + 'Zone2.Volume', {val: string, ack: true});
                     }
  
-/*
   //Onkyo_AVR_INFO (xml)
    if (chunk == 'NRI') {
-     adapter.setState (adapter.namespace + '.' + 'Receiver_Info', {val: (cmd.iscp_command).slice(3, -3), ack: true});
+     adapter.setState (adapter.namespace + '.' + 'Device.NavInfo', {val: (cmd.iscp_command).slice(3, -3), ack: true});
                        }
 
   //Onkyo_AVR_ListInfo (xml)
     if (chunk == 'NLA') {
     sequenz = string.substr(1,4)
-      adapter.setState (adapter.namespace + '.' + 'NET/USB_Sequenz', {val: sequenz, ack: true});
+      adapter.setState (adapter.namespace + '.' + 'Device.NavSequence', {val: sequenz, ack: true});
       adapter.log.debug('sequenz: ' + sequenz);
       var xmlrepeat = ((cmd.iscp_command).slice(12).substring(0, ((cmd.iscp_command).slice(12).indexOf('</response>'))+11))
       parser.parseString(xmlrepeat, function (err, result) {
         var jsonrepeat = JSON.stringify(result);
-        adapter.setState (adapter.namespace + '.' + 'Receiver_ListInfo', {val: jsonrepeat, ack: true});
-        adapter.log.debug('Adapter SET Reciver_ListInfo: ' + jsonrepeat);
+        adapter.setState (adapter.namespace + '.' + 'Device.NavListInfo', {val: jsonrepeat, ack: true});
+        adapter.log.debug('Adapter SET NavListInfo: ' + jsonrepeat);
                                                          });
-      adapter.log.debug('Adapter SET Reciver_ListInfo: ' + ((cmd.iscp_command).slice(12).substring(0, ((cmd.iscp_command).slice(12).indexOf('</response>'))+11)));
+      adapter.log.debug('Adapter SET NavListInfo: ' + ((cmd.iscp_command).slice(12).substring(0, ((cmd.iscp_command).slice(12).indexOf('</response>'))+11)));
                         }
-	*/
+
 	
   //Onkyo_Cover_Transfer (base64 coded in HEX)
     if (chunk == 'NJA') {
@@ -829,31 +828,31 @@ function main() {
                         }
 						
 	});  					
-	/*
+	
     //Onkyo Navigation on "Network-Mode"
       if (chunk == 'NLT')  {
         var string_nlt = string.substr(22,40);
-        adapter.setState (adapter.namespace + '.' + 'NET/USB_NAVIGATION', {val: string_nlt, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Device.Navigation', {val: string_nlt, ack: true});
         //String zerlegen fuer Navigation
         var string_nlt_nav = string.substr(6,2);                    //2 digits navigation
         string_nlt_nav = parseInt(string_nlt_nav, 16) + 1;              //this start at zero, we need start at one and convert hex to decimal
         var string_nlt_nav_summ = string.substr(10,2);              //2 digits navigation summary
         string_nlt_nav_summ = parseInt(string_nlt_nav_summ, 16);    //convert hex to decimal
-        adapter.setState (adapter.namespace + '.' + 'NET/USB_POSITION_SUMM', {val: string_nlt_nav+"/"+string_nlt_nav_summ, ack: true});
-        adapter.setState (adapter.namespace + '.' + 'NET/USB_Anzahl_Items', {val: string.substr(8,4), ack: true});
-        adapter.setState (adapter.namespace + '.' + 'NET/USB_Layer', {val: string.substr(12,2), ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Device.NavPositionSumm', {val: string_nlt_nav+"/"+string_nlt_nav_summ, ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Device.NavCountItems', {val: string.substr(8,4), ack: true});
+        adapter.setState (adapter.namespace + '.' + 'Device.NavLayer', {val: string.substr(12,2), ack: true});
         if (string.substr(0,3) == '110') {
           if (!sequenz) {
             sequenz = '0000'
                       }
-          adapter.setState (adapter.namespace + '.' + 'RAW', {val: 'NLAL' + sequenz + string.substr(12,2) + '0000' + string.substr(8,4)});
+          adapter.setState (adapter.namespace + '.' + 'Device.RAW', {val: 'NLAL' + sequenz + string.substr(12,2) + '0000' + string.substr(8,4)});
                                         }
         else if (string.substr(0,3) == '112') {
-          adapter.setState (adapter.namespace + '.' + 'RAW', {val: 'NTCRETURN'}); 
+          adapter.setState (adapter.namespace + '.' + 'Device.RAW', {val: 'NTCRETURN'}); 
                                               }
                           
                           }                          
-    });    */
+    });    
 
     eiscp.on("debug", function (message) {
         adapter.log.debug(message);

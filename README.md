@@ -24,6 +24,9 @@ Example of VIS view
 ![VIS](admin/onkyo-vis.png)     
 
 ## ChangeLog
+### 1.1.3
+* (Eisbaeeer) Adding Navigation Items   
+
 ### 1.1.2
 * (Eisbaeeer) Adding CoverArt
 
