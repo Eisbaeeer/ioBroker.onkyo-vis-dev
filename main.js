@@ -827,7 +827,7 @@ function main() {
                             }
                         }
 						
-	});  					
+	 					
 	
     //Onkyo Navigation on "Network-Mode"
       if (chunk == 'NLT')  {
@@ -851,8 +851,9 @@ function main() {
           adapter.setState (adapter.namespace + '.' + 'Device.RAW', {val: 'NTCRETURN'}); 
                                               }
                           
-                          }                          
-    });    
+                          } 
+}); 						  
+   
 
     eiscp.on("debug", function (message) {
         adapter.log.debug(message);
