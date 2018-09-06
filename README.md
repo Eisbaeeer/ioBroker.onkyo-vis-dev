@@ -23,6 +23,15 @@ showing whether node-eiscp is currently connected to a receiver.
 Example of VIS view
 ![VIS](admin/onkyo-vis.png)     
 
+## Tested Receivers
+### Onkyo
+TX-NR 525
+TX-NR 626
+
+### Pioneer
+VXS-S520D
+VSX-1131
+
 ## ChangeLog
 ### 1.1.3
 * (Eisbaeeer) Adding Navigation Items   
