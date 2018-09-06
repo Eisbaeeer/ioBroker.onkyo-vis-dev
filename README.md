@@ -25,12 +25,12 @@ Example of VIS view
 
 ## Tested Receivers
 ### Onkyo
-TX-NR 525
-TX-NR 626
+* TX-NR 525   
+* TX-NR 626   
 
 ### Pioneer
-VXS-S520D
-VSX-1131
+* VXS-S520D  
+* VSX-1131   
 
 ## ChangeLog
 ### 1.1.3
