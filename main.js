@@ -201,7 +201,8 @@ var adapter = utils.adapter({
 								'TUN' + new_val.substr(1,1),
 								'TUN' + new_val.substr(2,1),
 								'TUN' + new_val.substr(4,1),
-								'TUN' + new_val.substr(5,1)
+								'TUN' + new_val.substr(5,1),
+								'TUZQSTN'
 								);
 			
       setTimeout(function () {
@@ -210,7 +211,8 @@ var adapter = utils.adapter({
 				adapter.log.debug('Tune to: ' + arr[i]);
                 adapter.setState (adapter.namespace + '.' + 'Device.command', {val: arr[i], ack: false});
                 }
-        }, 20);
+        }, 10);
+				adapter.setState (adapter.namespace + '.' + 'Device.command', {val: 'TUZQSTN', ack: false});
                     }
 					
 			//Onkyo_Tune_Zone2
@@ -224,7 +226,8 @@ var adapter = utils.adapter({
 								'TUZ' + new_val.substr(1,1),
 								'TUZ' + new_val.substr(2,1),
 								'TUZ' + new_val.substr(4,1),
-								'TUZ' + new_val.substr(5,1)
+								'TUZ' + new_val.substr(5,1),
+								'TUNQSTN'
 								);
 			
       setTimeout(function () {
@@ -233,7 +236,7 @@ var adapter = utils.adapter({
 				adapter.log.debug('Tune to: ' + arr[i]);
                 adapter.setState (adapter.namespace + '.' + 'Device.command', {val: arr[i], ack: false});
                 }
-        }, 20);
+        }, 10);
                     }
 
 
