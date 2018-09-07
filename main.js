@@ -132,6 +132,7 @@ var adapter = utils.adapter({
               new_val = 'NPR' + new_val;
               adapter.log.debug('new_val: ' + new_val);
               adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+			  adapter.setState (adapter.namespace + '.' + 'Device.command', {val: 'SLI2B', ack: false});
                   }
 
               // Internet_Radio_Preset_Zone2   NPZ
@@ -141,6 +142,7 @@ var adapter = utils.adapter({
               new_val = 'NPZ' + new_val;
               adapter.log.debug('new_val: ' + new_val);
               adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+			  adapter.setState (adapter.namespace + '.' + 'Device.command', {val: 'SLZ2B', ack: false});
                   }                          
               
               // Tuner_Preset_Zone1  PRS
