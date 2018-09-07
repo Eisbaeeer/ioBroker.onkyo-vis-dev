@@ -189,6 +189,54 @@ var adapter = utils.adapter({
               adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
 			  adapter.setState (adapter.namespace + '.' + 'Device.command', {val: 'ZVLQSTN', ack: false});
                   }  
+				  
+			//Onkyo_Tune_Zone1
+				if (id == adapter.namespace + '.' +'Zone1.Tune')  {
+					new_val = state.val;
+					//load string in array
+					var arr = new Array(
+								'SLI24',
+								'TUNDIRECT',
+								'TUN' + new_val.substr(0,1),
+								'TUN' + new_val.substr(1,1),
+								'TUN' + new_val.substr(2,1),
+								'TUN' + new_val.substr(4,1),
+								'TUN' + new_val.substr(5,1)
+								);
+			
+      setTimeout(function () {
+            // send array to command object
+            for (var i = 0; i < arr.length; i++) {
+				adapter.log.debug('Tune to: ' + arr[i]);
+                adapter.setState (adapter.namespace + '.' + 'Device.command', {val: arr[i], ack: false});
+                }
+        }, 20);
+                    }
+					
+			//Onkyo_Tune_Zone2
+				if (id == adapter.namespace + '.' +'Zone2.Tune')  {
+					new_val = state.val;
+					//load string in array
+					var arr = new Array(
+								'SLZ24',
+								'TUZDIRECT',
+								'TUZ' + new_val.substr(0,1),
+								'TUZ' + new_val.substr(1,1),
+								'TUZ' + new_val.substr(2,1),
+								'TUZ' + new_val.substr(4,1),
+								'TUZ' + new_val.substr(5,1)
+								);
+			
+      setTimeout(function () {
+            // send array to command object
+            for (var i = 0; i < arr.length; i++) {
+				adapter.log.debug('Tune to: ' + arr[i]);
+                adapter.setState (adapter.namespace + '.' + 'Device.command', {val: arr[i], ack: false});
+                }
+        }, 20);
+                    }
+
+
 
 			// NET USB Play
               if (id == adapter.namespace + '.' +'Device.MediaPlay') {
@@ -773,7 +821,8 @@ function main() {
         string = parseInt(string, 16);              //convert hex to decimal
         adapter.setState (adapter.namespace + '.' + 'Zone2.Volume', {val: string, ack: true});
                     }
- 
+
+					
   //Onkyo_AVR_INFO (xml)
    if (chunk == 'NRI') {
      adapter.setState (adapter.namespace + '.' + 'Device.NavInfo', {val: (cmd.iscp_command).slice(3, -3), ack: true});

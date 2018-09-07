@@ -27,12 +27,16 @@ Example of VIS view
 ### Onkyo
 * TX-NR 525   
 * TX-NR 626   
+* TX-NR 727
 
 ### Pioneer
 * VXS-S520D  
 * VSX-1131   
 
 ## ChangeLog
+### 1.1.4  
+* (Eisbaeeer) Added direct tuning in zones (issue #2)
+
 ### 1.1.3
 * (Eisbaeeer) Adding Navigation Items   
 

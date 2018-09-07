@@ -1,8 +1,12 @@
 {
   "common": {
     "name": "onkyo-vis-dev",
-    "version": "1.1.3",
+    "version": "1.1.4",
 	"news": {
+			"1.1.4": {
+                "en": "Added direct tuning in zones. issue #2",
+                "de": "Direkte Eingabe der Radio Frequenz möglich. issue #2"
+				},
 			"1.1.3": {
                 "en": "Adding Navigation",
                 "de": "Navigation hinzugefügt"
