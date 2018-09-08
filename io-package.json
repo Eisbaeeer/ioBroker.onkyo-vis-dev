@@ -3,6 +3,10 @@
     "name": "onkyo-vis-dev",
     "version": "1.1.4",
 	"news": {
+			"1.1.5": {
+                "en": "Zones will be powered if tune preset selected",
+                "de": "Bei Auswahl der Radio Presets werden jetzt die entsprechenden Zonen eingeschaltet"
+				},
 			"1.1.4": {
                 "en": "Added direct tuning in zones. issue #2",
                 "de": "Direkte Eingabe der Radio Frequenz möglich. issue #2"

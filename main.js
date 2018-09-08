@@ -143,6 +143,7 @@ var adapter = utils.adapter({
               adapter.log.debug('new_val: ' + new_val);
               adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
 			  adapter.setState (adapter.namespace + '.' + 'Device.command', {val: 'SLZ2B', ack: false});
+			  adapter.setState (adapter.namespace + '.' + 'Device.command', {val: 'ZVLQSTN', ack: false});
                   }                          
               
               // Tuner_Preset_Zone1  PRS
@@ -152,6 +153,7 @@ var adapter = utils.adapter({
               new_val = 'PRS' + new_val;
               adapter.log.debug('new_val: ' + new_val);
               adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+			  adapter.setState (adapter.namespace + '.' + 'Device.command', {val: 'SLI24', ack: false});
                   }                          
 
               // Tuner_Preset_Zone2  PRZ
@@ -161,6 +163,8 @@ var adapter = utils.adapter({
               new_val = 'PRZ' + new_val;
               adapter.log.debug('new_val: ' + new_val);
               adapter.setState (adapter.namespace + '.' + 'Device.command', {val: new_val, ack: false});
+			  adapter.setState (adapter.namespace + '.' + 'Device.command', {val: 'SLZ24', ack: false});
+			  adapter.setState (adapter.namespace + '.' + 'Device.command', {val: 'ZVLQSTN', ack: false});
                   }                          
 
               // Power_Zone1    PWR

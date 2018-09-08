@@ -34,6 +34,9 @@ Example of VIS view
 * VSX-1131   
 
 ## ChangeLog
+### 1.1.5
+* (Eisbaeeer) Zones will be powered if tune preset selected   
+
 ### 1.1.4  
 * (Eisbaeeer) Added direct tuning in zones (issue #2)
 
