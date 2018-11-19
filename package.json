@@ -22,6 +22,7 @@
     "url": "https://github.com/Eisbaeeer/ioBroker.onkyo-vis-dev"
   },
   "dependencies": {
+	"xml2js": "^0.4.19",
 	"eiscp": "https://github.com/Eisbaeeer/node-eiscp/tarball/master/"
   },
   "devDependencies": {
