@@ -124,3 +124,5 @@ Example of VIS view
 ### 0.0.1
 * (owagner) initial version
 
+## License
+MIT
