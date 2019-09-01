@@ -1,7 +1,7 @@
 ![Logo](admin/onkyo.png)
 # ioBroker.onkyo-vis Developer version
 
-[![NPM version](http://img.shields.io/npm/v/iobroker.onkyo-vis-dev.svg)](https://www.npmjs.com/package/iobroker.onkyo-vis-dev)
+![Number of Installations](http://iobroker.live/badges/onkyo-vis-dev-installed.svg) ![Number of Installations](http://iobroker.live/badges/onkyo-vis-dev-stable.svg) [![NPM version](http://img.shields.io/npm/v/iobroker.onkyo-vis-dev.svg)](https://www.npmjs.com/package/iobroker.onkyo-vis-dev)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.onkyo-vis-dev.svg)](https://www.npmjs.com/package/iobroker.onkyo-vis-dev)
 [![Travis-CI](https://travis-ci.org/Eisbaeeer/ioBroker.onkyo-vis-dev.svg?branch=master)](https://www.travis-ci.org/Eisbaeeer/ioBroker.onkyo-vis-dev)   
 [![NPM](https://nodei.co/npm/iobroker.onkyo-vis-dev.png?downloads=true)](https://nodei.co/npm/iobroker.onkyo-vis-dev/)
@@ -124,3 +124,5 @@ Example of VIS view
 ### 0.0.1
 * (owagner) initial version
 
+## License
+MIT
